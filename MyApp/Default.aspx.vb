@@ -68,4 +68,12 @@ Public Class _Default
         GridViewTransactions.PageIndex = e.NewPageIndex
         LoadTransactions()
     End Sub
+
+    Protected Sub ButtonSearch_Click(sender As Object, e As EventArgs)
+        Try
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class
