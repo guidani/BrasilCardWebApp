@@ -13,7 +13,7 @@
         </div>
         <div class="mb-3 form-group">
             <asp:Label ID="LabelCardNumber" runat="server" Text="Número do cartão: " CssClass="form-label"></asp:Label>
-            <asp:TextBox ID="TextBoxCardNumber" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="TextBoxCardNumber" runat="server" CssClass="form-control" MaxLength="16"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidatorCardNumber" runat="server" ErrorMessage="Este campo é obrigatório" ControlToValidate="TextBoxCardNumber" Display="Dynamic"></asp:RequiredFieldValidator>
         </div>
         <div class="mb-3 form-group">
@@ -26,7 +26,7 @@
             <asp:TextBox ID="TextBoxTransactionDate" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidatorTransactionDate" runat="server" ErrorMessage="Este campo é obrigatório" ControlToValidate="TextBoxTransactionDate" Display="Dynamic"></asp:RequiredFieldValidator>
         </div>
-        <div class="mb-3">
+        <div class="mb-3 form-group">
             <asp:Label ID="LabelTransactionDescription" runat="server" Text="Descrição" CssClass="form-label"></asp:Label>
             <asp:TextBox ID="TextBoxTransactionDescription" runat="server" CssClass="form-control"></asp:TextBox>
         </div>

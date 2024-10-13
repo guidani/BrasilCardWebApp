@@ -7,23 +7,6 @@
     </div>
 
     <div class="row">
-
-
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="false" RenderMode="Block" ViewStateMode="Enabled">
-           <ContentTemplate>
-             
-           </ContentTemplate> 
-           <Triggers>
-               <asp:AsyncPostBackTrigger ControlID="GridViewTransactions" EventName="RowCommand" />
-           </Triggers> 
-        </asp:UpdatePanel>
-        <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="UpdatePanel1">
-            <ProgressTemplate>
-                <p>Carregando...</p>
-            </ProgressTemplate>
-        </asp:UpdateProgress>
-
-
           <asp:GridView 
             ID="GridViewTransactions" 
             runat="server" 
@@ -51,7 +34,6 @@
             ID="SqlDataSource1" 
             runat="server" 
             ConnectionString="<%$ ConnectionStrings:Brasil_CardConnectionString %>"
-            
             >
 
         </asp:SqlDataSource>

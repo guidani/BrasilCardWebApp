@@ -26,7 +26,7 @@
             <asp:TextBox ID="TextBoxTransactionDate" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidatorTransactionDate" runat="server" ErrorMessage="Este campo é obrigatório" ControlToValidate="TextBoxTransactionDate" Display="Dynamic"></asp:RequiredFieldValidator>
         </div>
-        <div class="mb-3">
+        <div class="mb-3 form-group">
             <asp:Label ID="LabelTransactionDescription" runat="server" Text="Descrição" CssClass="form-label"></asp:Label>
             <asp:TextBox ID="TextBoxTransactionDescription" runat="server" CssClass="form-control"></asp:TextBox>
         </div>

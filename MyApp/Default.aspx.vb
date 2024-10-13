@@ -18,8 +18,6 @@ Public Class _Default
 
             GridViewTransactions.DataSource = SqlDataSource1
             GridViewTransactions.DataBind()
-
-            UpdatePanel1.Update()
         Catch ex As Exception
 
         End Try
@@ -31,7 +29,8 @@ Public Class _Default
                 Dim index As Integer = Convert.ToInt32(e.CommandArgument)
                 Dim idTransacao As Integer = Convert.ToInt32(GridViewTransactions.DataKeys(index).Value)
                 DeletarTransacao(idTransacao)
-                LoadTransactions()
+                'LoadTransactions()
+                Page.Response.Redirect(Page.Request.Url.ToString(), True)
             ElseIf e.CommandName = "Edit" Then
                 Dim index As Integer = Convert.ToInt32(e.CommandArgument)
                 Dim idTransacao = GridViewTransactions.DataKeys(index).Value
