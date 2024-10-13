@@ -50,15 +50,6 @@ Partial Public Class _Default
     Protected WithEvents TextBoxTransactionDateFilter As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Controle LabelTransactionValueFilter.
-    '''</summary>
-    '''<remarks>
-    '''Campo gerado automaticamente.
-    '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-    '''</remarks>
-    Protected WithEvents LabelTransactionValueFilter As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''Controle LabelMinValue.
     '''</summary>
     '''<remarks>
