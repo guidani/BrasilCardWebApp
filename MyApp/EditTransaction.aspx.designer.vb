@@ -11,7 +11,16 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class NewTransaction
+Partial Public Class EditTransaction
+
+    '''<summary>
+    '''Controle Lbl1.
+    '''</summary>
+    '''<remarks>
+    '''Campo gerado automaticamente.
+    '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+    '''</remarks>
+    Protected WithEvents Lbl1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Controle LabelIdTransaction.

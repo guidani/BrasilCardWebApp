@@ -1,14 +1,14 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="NewTransaction.aspx.vb" Inherits="MyApp.NewTransaction" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="EditTransaction.aspx.vb" Inherits="MyApp.EditTransaction" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
-    <div class="row">
-    <h1 class="">Nova Transação</h1>
+     <div class="row">
+    <h1 class="">Editar Transação</h1>
+         <asp:Label runat="server" ID="Lbl1"/>
     </div>
 
     <div class="row">
         <div class="mb-3 form-group">
             <asp:Label ID="LabelIdTransaction" runat="server" Text="ID Transação: " CssClass="form-label"></asp:Label>
-            <asp:TextBox ID="TextBoxIdTransaction" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
+            <asp:TextBox ID="TextBoxIdTransaction" runat="server" CssClass="form-control"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidatorIdTransaction" runat="server" ErrorMessage="Este campo é obrigatório" Display="Dynamic" ControlToValidate="TextBoxIdTransaction"></asp:RequiredFieldValidator>
         </div>
         <div class="mb-3 form-group">
@@ -34,6 +34,4 @@
             <asp:Button ID="ButtonSaveTransaction" runat="server" Text="Salvar" CssClass="btn btn-primary" OnClick="ButtonSaveTransaction_Click"/>
         </div>
     </div>
-
-
 </asp:Content>
