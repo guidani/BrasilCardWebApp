@@ -112,13 +112,14 @@ Public Class _Default
             If Not String.IsNullOrEmpty(numeroCartao) Then
                 query &= " AND Numero_Cartao = @Numero_Cartao"
                 SqlDataSource1.SelectParameters.Add("Numero_Cartao", dbType:=DbType.String, numeroCartao)
+                TextBoxCardNumberFilter.Text = numeroCartao.ToString
             End If
 
             ' Filtro por Data da Transação
             If Not String.IsNullOrEmpty(dataTransacao) Then
                 query &= " AND CONVERT(DATE, Data_Transacao) = @Data_Transacao"
                 SqlDataSource1.SelectParameters.Add("Data_Transacao", dbType:=DbType.Date, DateTime.Parse(dataTransacao).ToString("yyyy-MM-dd"))
-
+                TextBoxTransactionDateFilter.Text = dataTransacao
             End If
 
             ' Filtro por Valores Mínimo e Máximo
@@ -136,13 +137,13 @@ Public Class _Default
             If valorMin > 0 Then
                 query &= " AND Valor_Transacao >= @ValorMin"
                 SqlDataSource1.SelectParameters.Add("ValorMin", dbType:=DbType.Decimal, valorMin)
-
+                TextBoxTransactionValueFilterMinValue.Text = valorMin.ToString
             End If
 
             If valorMax <> Decimal.MaxValue Then
                 query &= " AND Valor_Transacao <= @ValorMax"
                 SqlDataSource1.SelectParameters.Add("ValorMax", dbType:=DbType.Decimal, valorMax)
-
+                TextBoxTransactionValueFilterMaxValue.Text = valorMax.ToString
             End If
 
             SqlDataSource1.SelectCommand = query
