@@ -25,7 +25,7 @@
     Protected Sub ButtonExport_Click(sender As Object, e As EventArgs)
         Try
             Dim currentYear As Integer = New Date().Now.Year
-            Dim currentMonth As Integer = New Date().Now.Month
+            'Dim currentMonth As Integer = New Date().Now.Month
 
             Dim selectedMonth As Integer = Convert.ToInt32(DropDownListMonth.SelectedValue)
 
@@ -37,7 +37,16 @@
 
             Dim primeiroDiaFormatado = primeiroDia.ToString("yyyy-MM-dd")
             Dim ultimoDiaFormatado = ultimoDia.ToString("yyyy-MM-dd")
-            Console.WriteLine()
+
+            Dim query As String = $"SELECT 
+    T.Numero_Cartao,
+    T.Valor_Transacao,
+    T.Data_Transacao,
+	T.Descricao,
+    dbo.fn_CategoriaTransacao(T.Valor_Transacao) AS Categoria
+FROM Transacoes T
+WHERE T.Data_Transacao >= CONVERT(date, '{primeiroDiaFormatado}')  and T.Data_Transacao <= CONVERT(date, '{ultimoDiaFormatado}')"
+
         Catch ex As Exception
 
         End Try
