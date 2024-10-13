@@ -3,9 +3,23 @@
 Public Class _Default
     Inherits Page
 
+    Dim cardNumber As String
+    Dim transactionDate As String
+    Dim minValue As String
+    Dim maxValue As String
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
+        cardNumber = Request.QueryString("numero_cartao").Trim
+        transactionDate = Request.QueryString("data_transacao").Trim
+        minValue = Request.QueryString("valor_min").Trim
+        maxValue = Request.QueryString("valor_max").Trim
+
         If Not IsPostBack Then
-            LoadTransactions()
+            If String.IsNullOrWhiteSpace(cardNumber) OrElse String.IsNullOrWhiteSpace(transactionDate) OrElse String.IsNullOrWhiteSpace(minValue) OrElse String.IsNullOrWhiteSpace(maxValue) OrElse Then
+                LoadTransactions()
+            Else
+                LoadFilter()
+            End If
         End If
     End Sub
 
@@ -71,6 +85,30 @@ Public Class _Default
 
     Protected Sub ButtonSearch_Click(sender As Object, e As EventArgs)
         Try
+            Dim cardNumber = TextBoxCardNumberFilter.Text
+            Dim transactionDate = TextBoxTransactionDateFilter.Text
+            Dim minValue = TextBoxTransactionValueFilterMinValue.Text
+            Dim maxValue = TextBoxTransactionValueFilterMaxValue.Text
+
+            Dim query As String = $"?numero_cartao={cardNumber}&data_transacao={transactionDate}&valor_min={minValue}&valor_max={maxValue}"
+
+            Response.Redirect("Default.aspx" & query)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub LoadFilter()
+        Try
+            Dim sb As New StringBuilder
+            sb.Append("SELECT Id_Transacao, Numero_Cartao, Valor_Transacao, Data_Transacao, Descricao FROM Transacoes WHERE ")
+
+            If Not String.IsNullOrEmpty(cardNumber) Then
+                sb.Append($" Numero_Cartao = '{cardNumber}' ")
+            End If
+
+            Dim query As String = sb.ToString
+
 
         Catch ex As Exception
 
