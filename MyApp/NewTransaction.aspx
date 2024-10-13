@@ -9,22 +9,22 @@
         <div class="mb-3 form-group">
             <asp:Label ID="LabelIdTransaction" runat="server" Text="ID Transação: " CssClass="form-label"></asp:Label>
             <asp:TextBox ID="TextBoxIdTransaction" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidatorIdTransaction" runat="server" ErrorMessage="Este campo é obrigatório" Display="Dynamic" ControlToValidate="TextBoxIdTransaction"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidatorIdTransaction" runat="server" ErrorMessage="Este campo é obrigatório" Display="Dynamic" ControlToValidate="TextBoxIdTransaction"  CssClass="text-bg-danger"></asp:RequiredFieldValidator>
         </div>
         <div class="mb-3 form-group">
             <asp:Label ID="LabelCardNumber" runat="server" Text="Número do cartão: " CssClass="form-label"></asp:Label>
             <asp:TextBox ID="TextBoxCardNumber" runat="server" CssClass="form-control" MaxLength="16"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidatorCardNumber" runat="server" ErrorMessage="Este campo é obrigatório" ControlToValidate="TextBoxCardNumber" Display="Dynamic"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidatorCardNumber" runat="server" ErrorMessage="Este campo é obrigatório" ControlToValidate="TextBoxCardNumber" Display="Dynamic"  CssClass="text-bg-danger"></asp:RequiredFieldValidator>
         </div>
         <div class="mb-3 form-group">
             <asp:Label ID="LabelTransactionValue" runat="server" Text="Valor: " CssClass="form-label"></asp:Label>
             <asp:TextBox ID="TextBoxTransactionValue" runat="server" CssClass="form-control"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidatorTransactionValue" runat="server" ErrorMessage="Este campo é obrigatório" ControlToValidate="TextBoxTransactionValue" Display="Dynamic"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidatorTransactionValue" runat="server" ErrorMessage="Este campo é obrigatório" ControlToValidate="TextBoxTransactionValue" Display="Dynamic"  CssClass="text-bg-danger"></asp:RequiredFieldValidator>
         </div>
         <div class="mb-3 form-group">
             <asp:Label ID="LabelTransactionDate" runat="server" Text="Data da transação: " CssClass="form-label"></asp:Label>
             <asp:TextBox ID="TextBoxTransactionDate" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidatorTransactionDate" runat="server" ErrorMessage="Este campo é obrigatório" ControlToValidate="TextBoxTransactionDate" Display="Dynamic"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidatorTransactionDate" runat="server" ErrorMessage="Este campo é obrigatório" ControlToValidate="TextBoxTransactionDate" Display="Dynamic"  CssClass="text-bg-danger"></asp:RequiredFieldValidator>
         </div>
         <div class="mb-3 form-group">
             <asp:Label ID="LabelTransactionDescription" runat="server" Text="Descrição" CssClass="form-label"></asp:Label>

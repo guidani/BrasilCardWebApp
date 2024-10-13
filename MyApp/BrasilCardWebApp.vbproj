@@ -172,6 +172,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="EditTransaction.aspx" />
+    <Content Include="Exports.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -260,6 +261,13 @@
     <Compile Include="EditTransaction.aspx.vb">
       <DependentUpon>EditTransaction.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Exports.aspx.designer.vb">
+      <DependentUpon>Exports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Exports.aspx.vb">
+      <DependentUpon>Exports.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -294,6 +302,7 @@
     <Compile Include="Site.Master.vb">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="Utils\ExportToExcell.vb" />
     <Compile Include="ViewSwitcher.ascx.vb">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
