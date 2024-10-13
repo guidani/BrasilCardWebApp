@@ -83,6 +83,10 @@ Public Class _Default
             Dim minValue = TextBoxTransactionValueFilterMinValue.Text
             Dim maxValue = TextBoxTransactionValueFilterMaxValue.Text
 
+            If String.IsNullOrEmpty(cardNumber) AndAlso String.IsNullOrEmpty(transactionDate) AndAlso String.IsNullOrEmpty(minValue) AndAlso String.IsNullOrEmpty(maxValue) Then
+                Return
+            End If
+
             Dim query As String = $"?numero_cartao={cardNumber}&data_transacao={transactionDate}&valor_min={minValue}&valor_max={maxValue}"
 
             Response.Redirect("Default.aspx" & query)
@@ -152,6 +156,14 @@ Public Class _Default
             GridViewTransactions.DataSource = SqlDataSource1
             GridViewTransactions.DataBind()
 
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Protected Sub ButtonClearFilter_Click(sender As Object, e As EventArgs)
+        Try
+            Response.Redirect("~/")
         Catch ex As Exception
 
         End Try

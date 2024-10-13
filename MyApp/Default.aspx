@@ -46,6 +46,8 @@
 
     <div class="form-group my-2">
         <asp:Button ID="ButtonSearch" runat="server" Text="Buscar" CssClass="btn btn-primary" OnClick="ButtonSearch_Click" />
+        <asp:Button ID="ButtonClearFilter" runat="server" Text="Limpar Filtro" CssClass="btn btn-warning" OnClick="ButtonClearFilter_Click" />
+
     </div>
 
 

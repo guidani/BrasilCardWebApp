@@ -95,6 +95,15 @@ Partial Public Class _Default
     Protected WithEvents ButtonSearch As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''Controle ButtonClearFilter.
+    '''</summary>
+    '''<remarks>
+    '''Campo gerado automaticamente.
+    '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+    '''</remarks>
+    Protected WithEvents ButtonClearFilter As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Controle GridViewTransactions.
     '''</summary>
     '''<remarks>
