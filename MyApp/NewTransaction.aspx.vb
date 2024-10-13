@@ -28,7 +28,6 @@ Public Class NewTransaction
                         conn.Open()
                         cmd.ExecuteNonQuery()
 
-                        'Limpandos os campos
                         TextBoxIdTransaction.Text = ""
                         TextBoxCardNumber.Text = ""
                         TextBoxTransactionValue.Text = ""
@@ -41,8 +40,11 @@ Public Class NewTransaction
                 End Using
             End Using
 
+            LabelMessageSuccess.Text = "Transação inserida com sucesso."
+            LabelMessageSuccess.Visible = True
         Catch ex As Exception
-
+            LabelMessageSuccess.Text = "Ocorreu um erro inesperado, tente novamente."
+            LabelMessageSuccess.Visible = True
         End Try
     End Sub
 End Class

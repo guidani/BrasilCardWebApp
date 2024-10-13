@@ -147,4 +147,13 @@ Partial Public Class NewTransaction
     '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
     '''</remarks>
     Protected WithEvents ButtonSaveTransaction As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Controle LabelMessageSuccess.
+    '''</summary>
+    '''<remarks>
+    '''Campo gerado automaticamente.
+    '''Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+    '''</remarks>
+    Protected WithEvents LabelMessageSuccess As Global.System.Web.UI.WebControls.Label
 End Class
