@@ -47,13 +47,7 @@
 FROM Transacoes T
 WHERE T.Data_Transacao >= CONVERT(date, '{primeiroDiaFormatado}')  and T.Data_Transacao <= CONVERT(date, '{ultimoDiaFormatado}')"
 
-            SqlDataSource1.SelectCommand = query
-            SqlDataSource1.DataBind()
-
-            GridView1.DataSource = SqlDataSource1
-            GridView1.DataBind()
-
-            UpdatePanel1.Update()
+            ExportToExcell.ExportWithClosedXML(query, Page)
 
 
         Catch ex As Exception

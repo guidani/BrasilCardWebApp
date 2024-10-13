@@ -3,16 +3,8 @@
 Public Class _Default
     Inherits Page
 
-    'Dim cardNumber As String
-    'Dim transactionDate As String
-    'Dim minValue As String
-    'Dim maxValue As String
-
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
-        'cardNumber = Request.QueryString("numero_cartao").Trim
-        'transactionDate = Request.QueryString("data_transacao").Trim
-        'minValue = Request.QueryString("valor_min").Trim
-        'maxValue = Request.QueryString("valor_max").Trim
+
 
         If Not IsPostBack Then
             If Request.QueryString.Count > 0 Then
@@ -20,11 +12,7 @@ Public Class _Default
             Else
                 LoadTransactions()
             End If
-            'If String.IsNullOrWhiteSpace(cardNumber) OrElse String.IsNullOrWhiteSpace(transactionDate) OrElse String.IsNullOrWhiteSpace(minValue) OrElse String.IsNullOrWhiteSpace(maxValue) OrElse Then
-            '    LoadTransactions()
-            'Else
-            '    LoadFilter()
-            'End If
+
         End If
     End Sub
 
@@ -48,7 +36,7 @@ Public Class _Default
                 Dim index As Integer = Convert.ToInt32(e.CommandArgument)
                 Dim idTransacao As Integer = Convert.ToInt32(GridViewTransactions.DataKeys(index).Value)
                 DeletarTransacao(idTransacao)
-                'LoadTransactions()
+
                 Page.Response.Redirect(Page.Request.Url.ToString(), True)
             ElseIf e.CommandName = "Edit" Then
                 Dim index As Integer = Convert.ToInt32(e.CommandArgument)
@@ -115,7 +103,7 @@ Public Class _Default
                 Return
             End If
 
-            'Dim sqlds = New SqlDataSource
+
 
             Dim query As String = "SELECT Id_Transacao, Numero_Cartao, Data_Transacao, Valor_Transacao, Descricao FROM Transacoes WHERE 1=1"
             Dim parametros As New List(Of SqlParameter)
@@ -123,14 +111,12 @@ Public Class _Default
             ' Filtro por Número do Cartão
             If Not String.IsNullOrEmpty(numeroCartao) Then
                 query &= " AND Numero_Cartao = @Numero_Cartao"
-                'parametros.Add(New SqlParameter("@Numero_Cartao", numeroCartao))
                 SqlDataSource1.SelectParameters.Add("Numero_Cartao", dbType:=DbType.String, numeroCartao)
             End If
 
             ' Filtro por Data da Transação
             If Not String.IsNullOrEmpty(dataTransacao) Then
                 query &= " AND CONVERT(DATE, Data_Transacao) = @Data_Transacao"
-                'parametros.Add(New SqlParameter("@Data_Transacao", DateTime.Parse(dataTransacao)))
                 SqlDataSource1.SelectParameters.Add("Data_Transacao", dbType:=DbType.Date, DateTime.Parse(dataTransacao).ToString("yyyy-MM-dd"))
 
             End If
@@ -149,23 +135,16 @@ Public Class _Default
 
             If valorMin > 0 Then
                 query &= " AND Valor_Transacao >= @ValorMin"
-                'parametros.Add(New SqlParameter("@ValorMin", valorMin))
                 SqlDataSource1.SelectParameters.Add("ValorMin", dbType:=DbType.Decimal, valorMin)
 
             End If
 
             If valorMax <> Decimal.MaxValue Then
                 query &= " AND Valor_Transacao <= @ValorMax"
-                'parametros.Add(New SqlParameter("@ValorMax", valorMax))
                 SqlDataSource1.SelectParameters.Add("ValorMax", dbType:=DbType.Decimal, valorMax)
 
             End If
 
-            For Each param As Parameter In SqlDataSource1.SelectParameters
-                Console.WriteLine(param.Name & " = " & param.DefaultValue)
-            Next
-
-            Console.WriteLine($"Query >>>>>>>>>>>>> {query}")
             SqlDataSource1.SelectCommand = query
             SqlDataSource1.DataBind()
 
