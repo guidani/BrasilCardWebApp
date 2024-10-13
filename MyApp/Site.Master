@@ -17,7 +17,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
-<body>
+<body style="padding-top: 0">
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -39,19 +39,19 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-expand-lg">
+        <div class="navbar navbar-expand-lg bg-success">
             <div class="container">
                 <a class="navbar-brand" runat="server" href="~/">BrasilCard</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item"><a runat="server" href="~/">Página inicial</a></li>
-                        <li class="nav-item"><a runat="server" href="~/NewTransaction">Nova Transação</a></li>
-                        <li class="nav-item"><a runat="server" href="~/Exports">Exportações</a></li>
-                        <li class="nav-item"><a runat="server" href="~/About">Sobre</a></li>
-                        <li class="nav-item"><a runat="server" href="~/Contact">Contato</a></li>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a runat="server" href="~/" class="nav-link">Página inicial</a></li>
+                        <li class="nav-item"><a runat="server" href="~/NewTransaction" class="nav-link">Nova Transação</a></li>
+                        <li class="nav-item"><a runat="server" href="~/Exports" class="nav-link">Exportações</a></li>
+                       <%-- <li class="nav-item"><a runat="server" href="~/About" class="nav-link">Sobre</a></li>
+                        <li class="nav-item"><a runat="server" href="~/Contact" class="nav-link">Contato</a></li>--%>
                     </ul>
                 </div>
             </div>

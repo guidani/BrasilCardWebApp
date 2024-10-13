@@ -6,8 +6,6 @@ Imports System.Web.UI.Page
 Imports ClosedXML.Excel
 
 Public Class ExportToExcell
-
-
     Public Shared Sub ExportWithClosedXML(query As String, page As Page)
         Try
             Dim connString As String = ConfigurationManager.ConnectionStrings("Brasil_CardConnectionString").ConnectionString
