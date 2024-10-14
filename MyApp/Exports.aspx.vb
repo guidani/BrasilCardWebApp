@@ -38,16 +38,12 @@
             Dim primeiroDiaFormatado = primeiroDia.ToString("yyyy-MM-dd")
             Dim ultimoDiaFormatado = ultimoDia.ToString("yyyy-MM-dd")
 
-            Dim query As String = $"SELECT 
-    T.Numero_Cartao,
-    T.Valor_Transacao,
-    T.Data_Transacao,
-	T.Descricao,
-    dbo.fn_CategoriaTransacao(T.Valor_Transacao) AS Categoria
-FROM Transacoes T
-WHERE T.Data_Transacao >= CONVERT(date, '{primeiroDiaFormatado}')  and T.Data_Transacao <= CONVERT(date, '{ultimoDiaFormatado}')"
+            Dim query As String = $"SELECT T.Numero_Cartao, T.Valor_Transacao, T.Data_Transacao, T.Descricao, dbo.fn_CategoriaTransacao(T.Valor_Transacao) AS Categoria FROM Transacoes T WITH (NOLOCK) WHERE T.Data_Transacao >= CONVERT(date, '{primeiroDiaFormatado}')  and T.Data_Transacao <= CONVERT(date, '{ultimoDiaFormatado}') "
 
-            ExportToExcell.ExportWithClosedXML(query, Page)
+            SqlDataSource1.SelectCommand = query
+            SqlDataSource1.DataBind()
+
+            ExportToExcell.Export(GridView1)
 
 
         Catch ex As Exception

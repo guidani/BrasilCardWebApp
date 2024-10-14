@@ -28,14 +28,16 @@
         </div>
     </div>
     <div class="row">
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
-            <ContentTemplate>
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="true" Visible="false"></asp:GridView>
-            </ContentTemplate>
-            <Triggers>
-                <asp:AsyncPostBackTrigger ControlID="ButtonExport"/>
-            </Triggers>
-        </asp:UpdatePanel>
+                <asp:GridView 
+                    ID="GridView1" 
+                    runat="server" 
+                    AutoGenerateColumns="true" 
+                    Visible="false" 
+                    AllowPaging="false" 
+                    AllowSorting="false" 
+                    DataSourceID="SqlDataSource1">
+
+                </asp:GridView>
     </div>
 
     <%--  --%>
